@@ -31,12 +31,18 @@ class MainActivity : AppCompatActivity(), CounterView {
 
     override fun showCount(count: String) {
         binding.tvCount.text = count
-        
-        if (count == "10") {
-            Toast.makeText(this, getString(R.string.congratulations), Toast.LENGTH_SHORT).show()
-        }
-        if (count == "15") {
-            binding.tvCount.setTextColor(Color.GREEN)
-        }
+
+    }
+
+    override fun showToast(message: String) {
+        Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
+    }
+
+    override fun changeTextColor(color: Int) {
+        binding.tvCount.setTextColor(color)
+    }
+
+    override fun resetTextColor() {
+        binding.tvCount.setTextColor(Color.BLACK)
     }
 }
